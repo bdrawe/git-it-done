@@ -8,7 +8,6 @@ var languageButtonsEl = document.querySelector("#language-buttons");
 var formSubmitHandler = function(event) {
     event.preventDefault();
     var username = nameInputEl.value.trim();
-
     if(username){
         getUserRepos(username);
         nameInputEl.value = "";
@@ -79,7 +78,7 @@ var displayRepos = function(repos, searchTerm){
     
 var getUserRepos =  function(user){
   // format the github api url
-  var apiUrl = "http://api.github.com/users/" + user + "/repos";
+  var apiUrl = "https://api.github.com/users/" + user + "/repos";
 
   //make a request to the url
   fetch(apiUrl).then(function(response){
